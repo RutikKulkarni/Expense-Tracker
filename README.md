@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Expense Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Expense Tracker is a web application designed to help users track their expenses efficiently. The application allows users to add, edit, and delete expenses, view a summary of their expenses, and manage their wallet balance.
 
-## Available Scripts
+- Live URL: [URL](https://expense-tracker-alpha-opal.vercel.app/)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+1. **Wallet Balance Management:**
+   - By default, the wallet balance is set to 5000.
+   - Users can increase their wallet balance.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Expense Management:**
+   - Add new expenses with details such as title, amount, category, and date.
+   - Wallet balance updates accordingly when adding expenses.
+   - Edit existing expenses.
+   - Delete expenses.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Expense Summary:**
+   - View a summary of total expenses categorized by date or type.
+   - Pie chart visualization of expense summary.
 
-### `npm test`
+4. **Responsive Design:**
+   - Ensure the application is usable on various screen sizes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Functional Requirements
 
-### `npm run build`
+### 1. Add Expense Form
+   - Provide fields for title, amount, category, and date with validation for required fields.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Add Income Form
+   - Allow users to add balance to their wallet.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Expense List
+   - Display a list of expenses with options to edit or delete each expense.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. Expense Summary
+   - Show a summary of total expenses in a pie chart.
 
-### `npm run eject`
+### 5. Expense Trends
+   - Display a bar chart showing trending spends based on category.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 6. Edit/Delete
+   - Allow users to edit or delete expenses.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 7. Responsive Design
+   - Ensure the application is usable on different devices.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technologies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Frontend:**
+- React.js
+- HTML
+- CSS
+- JavaScript
 
-## Learn More
+**Third-party Libraries:**
+- Recharts (for charts)
+- React-modal (for modals)
+- Notistack (for alerts)
+- React-icons (for icons)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Figma
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Figma Link](https://www.figma.com/file/yHps1cSScYurYlrtnHmQMN/Crio-Takehome---Expense-Tracker?type=design&node-id=2%3A5&mode=design&t=4vF4yvSzzc2fq6Z1-1)  
+[Prototype (for reference)](https://www.figma.com/proto/yHps1cSScYurYlrtnHmQMN/Crio-Takehome---Expense-Tracker?type=design&node-id=2-6&t=f21zpQNA6iD7q7Ha-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A6)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
