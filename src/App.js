@@ -1,5 +1,5 @@
-import React from 'react';
-import Home from './Pages/Home';
+import React from "react";
+import Home from "./Pages/Home";
 
 const App = () => {
   return (
@@ -7,6 +7,6 @@ const App = () => {
       <Home />
     </div>
   );
-}
+};
 
 export default App;

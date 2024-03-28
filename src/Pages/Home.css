@@ -1,0 +1,30 @@
+.homecontainer {
+  width: 99%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: -10px;
+  position: relative;
+  background-color: rgb(102, 102, 102);
+}
+
+.secrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+}
+
+.graph-container {
+  width: 40%;
+}
+
+.recent-transactions-container {
+  width: 60%;
+}
