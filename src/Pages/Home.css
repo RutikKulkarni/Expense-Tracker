@@ -28,3 +28,44 @@
 .recent-transactions-container {
   width: 60%;
 }
+
+
+/* For Small screens */
+@media only screen and (max-width: 768px) {
+  .homecontainer {
+    height: 70vh;
+    flex-direction: column;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .graph-container,
+  .recent-transactions-container {
+    width: 100%;
+  }
+
+  .secrow {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .homecontainer {
+    height: 80vh;
+  }
+
+  .container {
+    width: 95%;
+    margin-bottom: 5px;
+  }
+
+  .secrow {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+}

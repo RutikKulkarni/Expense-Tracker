@@ -261,3 +261,71 @@ canvas {
 .green {
   background-color: green;
 }
+
+
+/* For small screens */
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  .chart-container {
+    max-width: 400px;
+  }
+
+  .transaction-container {
+    width: 90%;
+  }
+
+  .pagination-buttons button,
+  .pagination-buttons p {
+    margin: 0 5px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+    margin-right: 5px;
+  }
+
+  .dot {
+    width: 15px;
+    height: 15px;
+  }
+
+  .tag-p {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 80%;
+  }
+
+  .chart-container {
+    max-width: 300px;
+  }
+
+  .transaction-container {
+    width: 80%;
+  }
+
+  .pagination-buttons button,
+  .pagination-buttons p {
+    margin: 0 3px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+    margin-right: 3px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .tag-p {
+    font-size: 16px;
+  }
+}

@@ -24,3 +24,16 @@ select {
   background-size: 20px;
   cursor: pointer;
 }
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  select {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  select {
+    font-size: 12px;
+  }
+}
