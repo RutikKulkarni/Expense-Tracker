@@ -10,7 +10,7 @@ import PieChartComponent from "../components/PieChart/pieChart";
 import "./Home.css";
 
 const Home = () => {
-  const [balance, setBalance] = useState(5000); // Default balance set to 5000
+  const [balance, setBalance] = useState(5000); 
   const [showAddIncome, setShowAddIncome] = useState(false);
   const [showAddExpense, setShowAddExpense] = useState(false);
   const [expenses, setExpenses] = useState([]);
@@ -71,19 +71,16 @@ const Home = () => {
     const { title, price, category, date } = expense;
     const expenseAmount = parseFloat(price);
 
-    // Check if the expense amount exceeds the available balance
     if (expenseAmount > balance) {
       alert("You cannot spend more than your available balance!");
-      return; // Exit the function if the expense amount exceeds the balance
+      return;
     }
 
-    // Add the expense and update the balance and total expenses
     setExpenses([...expenses, { title, price, category, date }]);
     setBalance((prevBalance) => prevBalance - expenseAmount);
     setTotalExpenses((prevTotal) => prevTotal + expenseAmount);
     setShowAddExpense(false);
 
-    // Add the new transaction to the recent transactions
     const newTransaction = {
       category: category,
       date: date,
