@@ -6,6 +6,7 @@ import AddExpenses from '../components/Expenses/addExpenses';
 import RecentTransactions from '../components/RecentTransactions/recentTransactions';
 import EditTransactions from '../components/RecentTransactions/editTransactions';
 import TopExpenses from '../components/TopExpenses/topExpenses';
+import PieChartComponent from '../components/PieChart/pieChart'; // Import PieChartComponent
 
 const Home = () => {
   const [balance, setBalance] = useState(0);
@@ -142,6 +143,7 @@ const Home = () => {
         handleDelete={handleDeleteTransaction}
       />
       <TopExpenses expenses={expenses} />
+      <PieChartComponent expenses={expenses} />
     </div>
   );
 };

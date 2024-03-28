@@ -25,22 +25,25 @@ const TopExpenses = ({ expenses }) => {
             expenses.reduce((acc, expense) => expense.category === 'Entertainment' ? acc + parseFloat(expense.price) : acc, 0),
             expenses.reduce((acc, expense) => expense.category === 'Other' ? acc + parseFloat(expense.price) : acc, 0),
           ],
-          backgroundColor: ['red', 'blue', 'green', 'orange', 'purple'],
+          backgroundColor: ['red','blue','yellow', 'green', 'purple'],
         }]
       },
       options: {
-        indexAxis: 'y', // Switch the axis
+        indexAxis: 'y', // Switch the axis to vertical
         scales: {
-          x: {
+          y: {
             beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Category'
+            }
+          },
+          x: {
+            // Update labels
             title: {
               display: true,
               text: 'Amount'
             }
-          },
-          y: {
-            // Update labels
-            labels: ['Food', 'Travel', 'Shopping', 'Entertainment', 'Other']
           }
         }
       }
