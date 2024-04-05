@@ -65,4 +65,3 @@ Expense Tracker is a web application designed to help users track their expenses
 [Figma Link](https://www.figma.com/file/yHps1cSScYurYlrtnHmQMN/Crio-Takehome---Expense-Tracker?type=design&node-id=2%3A5&mode=design&t=4vF4yvSzzc2fq6Z1-1)  
 [Prototype (for reference)](https://www.figma.com/proto/yHps1cSScYurYlrtnHmQMN/Crio-Takehome---Expense-Tracker?type=design&node-id=2-6&t=f21zpQNA6iD7q7Ha-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A6)
 
-
