@@ -1,14 +1,14 @@
-import React from "react";
-import { SnackbarProvider } from 'notistack';
-import Home from "./Pages/Home";
+import MainDashboard from "./components/MainDashboard/MainDashboard";
+import { SnackbarProvider } from "notistack";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <SnackbarProvider maxSnack={3}></SnackbarProvider>
-      <Home />
-    </div>
+    <SnackbarProvider>
+      <div>
+        <MainDashboard />
+      </div>
+    </SnackbarProvider>
   );
-};
+}
 
 export default App;
