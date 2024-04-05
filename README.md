@@ -2,8 +2,6 @@
 
 Expense Tracker is a web application designed to help users track their expenses efficiently. The application allows users to add, edit, and delete expenses, view a summary of their expenses, and manage their wallet balance.
 
-- Live URL: [URL](https://expense-tracker-alpha-opal.vercel.app/)
-
 ## Features
 
 1. **Wallet Balance Management:**
