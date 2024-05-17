@@ -1,54 +1,110 @@
-import React from "react";
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from "recharts";
+import React, { useEffect, useRef } from "react";
+import Chart from "chart.js/auto";
+import "../../styles/styles.css";
 
-const COLORS = ["#A000FF", "#FF9304", "#FDE006"];
-const RADIAN = Math.PI / 180;
+const PieChartComponent = ({ expenses }) => {
+  const chartContainer = useRef(null);
+  const chartInstance = useRef(null);
 
-const renderCustomizedLabel = ({
-  cx,
-  cy,
-  midAngle,
-  innerRadius,
-  outerRadius,
-  percent,
-}) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+  useEffect(() => {
+    if (chartInstance.current !== null) {
+      chartInstance.current.destroy();
+    }
+
+    const ctx = chartContainer.current.getContext("2d");
+
+    if (!expenses || expenses.length === 0) {
+      chartInstance.current = new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: ["No Data"],
+          datasets: [
+            {
+              data: [1],
+              backgroundColor: ["gray"],
+            },
+          ],
+        },
+        options: {},
+      });
+    } else {
+      chartInstance.current = new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: ["Food", "Travel", "Shopping", "Entertainment", "Other"],
+          datasets: [
+            {
+              label: "Expenses",
+              data: [
+                expenses.reduce(
+                  (acc, expense) =>
+                    expense.category === "Food"
+                      ? acc + parseFloat(expense.price)
+                      : acc,
+                  0
+                ),
+                expenses.reduce(
+                  (acc, expense) =>
+                    expense.category === "Travel"
+                      ? acc + parseFloat(expense.price)
+                      : acc,
+                  0
+                ),
+                expenses.reduce(
+                  (acc, expense) =>
+                    expense.category === "Shopping"
+                      ? acc + parseFloat(expense.price)
+                      : acc,
+                  0
+                ),
+                expenses.reduce(
+                  (acc, expense) =>
+                    expense.category === "Entertainment"
+                      ? acc + parseFloat(expense.price)
+                      : acc,
+                  0
+                ),
+                expenses.reduce(
+                  (acc, expense) =>
+                    expense.category === "Other"
+                      ? acc + parseFloat(expense.price)
+                      : acc,
+                  0
+                ),
+              ],
+              backgroundColor: ["red", "blue", "yellow", "green", "purple"],
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            legend: {
+              position: "bottom",
+            },
+          },
+          color: "white",
+        },
+      });
+    }
+
+    return () => {
+      if (chartInstance.current !== null) {
+        chartInstance.current.destroy();
+      }
+    };
+  }, [expenses]);
+
   return (
-    <text
-      x={x}
-      y={y}
-      fill="white"
-      textAnchor={x > cx ? "start" : "end"}
-      dominantBaseline="central"
-    >
-      {`${(percent * 100).toFixed(0)}%`}
-    </text>
-  );
-};
-
-const PieChartComponent = ({ data }) => {
-  return (
-    <ResponsiveContainer width="100%" height={250}>
-      <PieChart>
-        <Pie
-          data={data}
-          cx="50%"
-          cy="50%"
-          labelLine={false}
-          label={renderCustomizedLabel}
-          outerRadius={80}
-          fill="#8884d8"
-          dataKey="value"
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Legend iconType="rect" verticalAlign="bottom" />
-      </PieChart>
-    </ResponsiveContainer>
+    <div>
+      <div>
+        <canvas
+          ref={chartContainer}
+          id="topExpensesChart"
+          width="300"
+          height="300"
+        ></canvas>
+      </div>
+    </div>
   );
 };
 

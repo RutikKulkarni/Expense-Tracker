@@ -1,33 +1,86 @@
-import React from "react";
-import styles from "./RecentTransactions.module.css";
-import { IoMdCloseCircleOutline } from "react-icons/io";
-import { PiPizza, PiGift } from "react-icons/pi";
-import { MdOutlineModeEdit } from "react-icons/md";
-import { BsSuitcase2 } from "react-icons/bs";
+import React, { useState } from "react";
+import {
+  FaEdit,
+  FaTrash,
+  FaUtensils,
+  FaGamepad,
+  FaPlane,
+  FaShoppingBag,
+  FaUser,
+  FaArrowLeft,
+  FaArrowRight,
+} from "react-icons/fa";
+import "../../styles/styles.css";
 
-const RecentTransactions = ({ details, handleDelete, handleEdit }) => {
+const RecentTransactions = ({ transactions, handleEdit, handleDelete }) => {
+  const itemsPerPage = 4;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const getCategoryIcon = (category) => {
+    switch (category) {
+      case "Food":
+        return <FaUtensils />;
+      case "Entertainment":
+        return <FaGamepad />;
+      case "Travel":
+        return <FaPlane />;
+      case "Shopping":
+        return <FaShoppingBag />;
+      default:
+        return <FaUser />;
+    }
+  };
+
+  const lastIndex = currentPage * itemsPerPage;
+  const firstIndex = lastIndex - itemsPerPage;
+  const currentTransactions = transactions.slice(firstIndex, lastIndex);
+
+  const handleNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage(currentPage - 1);
+  };
+
   return (
-    <div className={styles.card}>
-      <div className={styles.cardInner}>
-        <div className={styles.cardIcon}>
-          {details.category === "food" && <PiPizza />}
-          {details.category === "entertainment" && <PiGift />}
-          {details.category === "travel" && <BsSuitcase2 />}
-        </div>
-        <div className={styles.cardInfo}>
-          <h5>{details.title}</h5>
-          <p>{details.date}</p>
-        </div>
-      </div>
-
-      <div className={styles.cardInner}>
-        <p className={styles.cardPrice}>{`₹${details.price}`}</p>
-        <div className={styles.cardButtonWrapper}>
-          <button className={styles.cardDelete} onClick={handleDelete}>
-            <IoMdCloseCircleOutline />
+    <div className="transaction-container">
+      <h2>Recent Transactions</h2>
+      <ul>
+        {currentTransactions.map((transaction, index) => (
+          <li key={index} className="transaction-row">
+            <div className="transaction-details">
+              <div className="category-icon">
+                <p className="transaction-title">
+                  {getCategoryIcon(transaction.category)}&emsp;{" "}
+                  {transaction.title}
+                </p>
+              </div>
+              <p className="transaction-date">&emsp;{transaction.date}</p>
+            </div>
+            <div className="icon-buttons">
+              <p className="transaction-amount">&#8377;{transaction.amount}</p>
+              <button onClick={() => handleEdit(firstIndex + index)}>
+                <FaEdit />
+              </button>
+              <button onClick={() => handleDelete(firstIndex + index)}>
+                <FaTrash />
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <div className="pagination-container">
+        <div className="pagination-buttons">
+          <button disabled={currentPage === 1} onClick={handlePrevPage}>
+            <FaArrowLeft />
           </button>
-          <button className={styles.cardEdit} onClick={handleEdit}>
-            <MdOutlineModeEdit />
+          <p>Page {currentPage}</p>
+          <button
+            disabled={lastIndex >= transactions.length}
+            onClick={handleNextPage}
+          >
+            <FaArrowRight />
           </button>
         </div>
       </div>
