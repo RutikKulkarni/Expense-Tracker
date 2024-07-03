@@ -5,7 +5,7 @@ import TransactionList from "../../components/TransactionList/TransactionList";
 import ExpenseForm from "../../components/Forms/ExpenseForm/ExpenseForm";
 import Modal from "../../components/Modal/Modal";
 import AddBalanceForm from "../../components/Forms/AddBalanceForm/AddBalanceForm";
-import PieChart from "../../components/PieChart/PieChart.jsx";
+import PieChartComponent from "../../components/PieChart/PieChart.jsx";
 import BarChart from "../../components/BarChart/BarChart";
 
 export default function Home() {
@@ -132,7 +132,7 @@ export default function Home() {
           }}
         />
 
-        <PieChart
+        <PieChartComponent
           data={[
             { name: "Food", value: categorySpends.food },
             { name: "Entertainment", value: categorySpends.entertainment },
