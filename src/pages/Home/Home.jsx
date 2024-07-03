@@ -5,7 +5,7 @@ import TransactionList from "../../components/TransactionList/TransactionList";
 import ExpenseForm from "../../components/Forms/ExpenseForm/ExpenseForm";
 import Modal from "../../components/Modal/Modal";
 import AddBalanceForm from "../../components/Forms/AddBalanceForm/AddBalanceForm";
-import PieChart from "../../components/PieChart/PieChart";
+import PieChart from "../../components/PieChart/PieChart.jsx";
 import BarChart from "../../components/BarChart/BarChart";
 
 export default function Home() {
