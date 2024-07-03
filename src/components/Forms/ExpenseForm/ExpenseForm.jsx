@@ -3,7 +3,7 @@ import Button from "../../Button/Button.jsx";
 import { useEffect, useState } from "react";
 import { useSnackbar } from "notistack";
 
-export default function ExpenseForm({
+function ExpenseForm({
   setIsOpen,
   expenseList,
   setExpenseList,
@@ -55,7 +55,7 @@ export default function ExpenseForm({
     e.preventDefault();
 
     const updated = expenseList.map((item) => {
-      if (item.id == editId) {
+      if (item.id === editId) {
         const priceDifference = item.price - Number(formData.price);
 
         if (priceDifference < 0 && Math.abs(priceDifference) > balance) {
@@ -80,7 +80,7 @@ export default function ExpenseForm({
 
   useEffect(() => {
     if (editId) {
-      const expenseData = expenseList.find((item) => item.id == editId);
+      const expenseData = expenseList.find((item) => item.id === editId);
 
       setFormData({
         title: expenseData.title,
@@ -146,3 +146,5 @@ export default function ExpenseForm({
     </div>
   );
 }
+
+export default ExpenseForm;

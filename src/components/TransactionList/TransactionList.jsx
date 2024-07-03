@@ -5,7 +5,7 @@ import ExpenseForm from "../Forms/ExpenseForm/ExpenseForm";
 import { useEffect, useState } from "react";
 import Pagination from "../Pagination/Pagination";
 
-export default function TransactionList({
+function TransactionList({
   transactions,
   title,
   editTransactions,
@@ -90,3 +90,5 @@ export default function TransactionList({
     </div>
   );
 }
+
+export default TransactionList;

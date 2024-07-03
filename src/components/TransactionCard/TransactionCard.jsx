@@ -4,7 +4,7 @@ import { PiPizza, PiGift } from "react-icons/pi";
 import { MdOutlineModeEdit } from "react-icons/md";
 import { BsSuitcase2 } from "react-icons/bs";
 
-export default function TransactionCard({ details, handleDelete, handleEdit }) {
+function TransactionCard({ details, handleDelete, handleEdit }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardInner}>
@@ -33,3 +33,5 @@ export default function TransactionCard({ details, handleDelete, handleEdit }) {
     </div>
   );
 }
+
+export default TransactionCard;

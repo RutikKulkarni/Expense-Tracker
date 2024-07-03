@@ -1,7 +1,7 @@
 import styles from "./Pagination.module.css";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 
-export default function Pagination({ updatePage, currentPage, totalPages }) {
+function Pagination({ updatePage, currentPage, totalPages }) {
   const handlePrev = () => {
     if (currentPage > 1) {
       updatePage((prev) => prev - 1);
@@ -28,3 +28,5 @@ export default function Pagination({ updatePage, currentPage, totalPages }) {
     </div>
   );
 }
+
+export default Pagination;

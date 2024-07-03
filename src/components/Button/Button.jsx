@@ -1,6 +1,6 @@
 import styles from "./Button.module.css";
 
-export default function Button({
+function Button({
   children,
   handleClick,
   style = "primary",
@@ -17,3 +17,5 @@ export default function Button({
     </button>
   );
 }
+
+export default Button;

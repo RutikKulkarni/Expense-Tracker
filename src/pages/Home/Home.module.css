@@ -3,10 +3,12 @@
   padding: 24px;
   min-height: 100vh;
 }
+
 .container h1 {
   color: #fff;
   margin-bottom: 10px;
 }
+
 .cardsWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -17,6 +19,7 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 32px;
 }
+
 .transactionsWrapper {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -28,11 +31,13 @@
   .container h1 {
     text-align: center;
   }
+
   .cardsWrapper {
     padding: 16px;
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
   .transactionsWrapper {
     grid-template-columns: 1fr;
   }

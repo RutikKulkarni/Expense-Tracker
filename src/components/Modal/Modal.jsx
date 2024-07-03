@@ -1,9 +1,8 @@
-import styles from "./Modal.module.css";
 import Modal from "react-modal";
 
 Modal.setAppElement("#root");
 
-export default function ModalWrapper({ isOpen, setIsOpen, children }) {
+const ModalWrapper = ({ isOpen, setIsOpen, children }) => {
   const handleClose = () => {
     setIsOpen(false);
   };
@@ -34,4 +33,6 @@ export default function ModalWrapper({ isOpen, setIsOpen, children }) {
       {children}
     </Modal>
   );
-}
+};
+
+export default ModalWrapper;

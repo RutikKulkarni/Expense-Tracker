@@ -5,10 +5,10 @@ import TransactionList from "../../components/TransactionList/TransactionList";
 import ExpenseForm from "../../components/Forms/ExpenseForm/ExpenseForm";
 import Modal from "../../components/Modal/Modal";
 import AddBalanceForm from "../../components/Forms/AddBalanceForm/AddBalanceForm";
-import PieChartComponent from "../../components/PieChart/PieChart.jsx";
+import PieChartComponent from "../../../src/components/PieChart/PieChart";
 import BarChart from "../../components/BarChart/BarChart";
 
-export default function Home() {
+function Home() {
   const [balance, setBalance] = useState(0);
   const [expense, setExpense] = useState(0);
   const [expenseList, setExpenseList] = useState([]);
@@ -177,3 +177,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

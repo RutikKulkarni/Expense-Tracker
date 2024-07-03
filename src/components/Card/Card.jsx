@@ -1,7 +1,7 @@
 import Button from "../Button/Button";
 import styles from "./Card.module.css";
 
-export default function Card({
+function Card({
   title,
   money,
   buttonText,
@@ -23,3 +23,5 @@ export default function Card({
     </div>
   );
 }
+
+export default Card;
