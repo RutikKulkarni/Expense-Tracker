@@ -1,12 +1,14 @@
-import React from "react";
-import Home from "./Pages/Home";
+import Home from "./pages/Home/Home";
+import { SnackbarProvider } from "notistack";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <SnackbarProvider>
+      <div>
+        <Home />
+      </div>
+    </SnackbarProvider>
   );
-};
+}
 
 export default App;
