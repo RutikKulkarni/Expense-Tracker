@@ -5,8 +5,8 @@ import TransactionList from "../../components/TransactionList/TransactionList";
 import ExpenseForm from "../../components/Forms/ExpenseForm/ExpenseForm";
 import Modal from "../../components/Modal/Modal";
 import AddBalanceForm from "../../components/Forms/AddBalanceForm/AddBalanceForm";
-import PieChartComponent from "../../../src/components/PieChart/PieChart";
-import BarChart from "../../components/BarChart/BarChart";
+import BarChart from "../../components/Charts/BarChart/BarChart";
+import PieChartComponent from "../../components/Charts/PieChart/PieChart";
 
 function Home() {
   const [balance, setBalance] = useState(0);
